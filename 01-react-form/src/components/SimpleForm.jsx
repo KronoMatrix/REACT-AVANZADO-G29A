@@ -18,7 +18,7 @@ const SimpleForm = () => {
       <div className="login-container">
         <img src={logo} alt="Logo del form" />
         <form onSubmit={handlerOnSubmit}>
-            {/* Paso #3 Guardar cada cambio de los imputs */}
+            {/* Paso #3 Guardar cada cambio de los inputs */}
           <label htmlFor="email">Email</label>
           <input
             type="text"

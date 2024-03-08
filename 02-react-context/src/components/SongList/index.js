@@ -1,3 +1,3 @@
-import SongDetails from './SongDetails'
+import SongList from './SongList'
 
-export default SongDetails
+export default SongList

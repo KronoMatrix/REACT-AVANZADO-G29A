@@ -3,27 +3,30 @@ import './header.scss'
 
 const Header = () => {
   // Se compara si el link está activo o no, con ayuda del NavLink
-  const linkIsActive = ( { isActive, isPending }) => {
+  const linkIsActive = ({ isActive, isPending }) => {
     return isActive ? 'header__item-link header__item-link--is-active' : 'header__item-link'
   }
+
+  // Documentación de NavLink
+  // https://reactrouter.com/en/main/components/nav-link
   return (
     <nav className='header'>
       <NavLink className='header-logo' href='/'>Logo</NavLink>
       <ul className='header__nav-list'>
         <li className='header__list-item'>
-          <NavLink className='header__item-link header__item-link--is-active' href='/home'>Home</NavLink>
+          <NavLink className={linkIsActive} to='/home'>Home</NavLink>
         </li>
         <li className='header__list-link'>
-          <NavLink className='header__item-link' href='/dashboar'>Dashboard</NavLink>
+          <NavLink className={linkIsActive} to='/dashboar'>Dashboard</NavLink>
         </li>
         <li className='header__list-link'>
-          <NavLink className='header__item-link' href='/login'>Login</NavLink>
+          <NavLink className={linkIsActive} to='/login'>Login</NavLink>
         </li>
         <li className='header__list-link'>
-          <NavLink className='header__item-link' href='/secret'>Secret</NavLink>
+          <NavLink className={linkIsActive} to='/secret'>Secret</NavLink>
         </li>
         <li className='header__list-link'>
-          <NavLink className='header__item-link' href='/signup'>Signup</NavLink>
+          <NavLink className={linkIsActive} to='/signup'>Signup</NavLink>
         </li>
       </ul>
 

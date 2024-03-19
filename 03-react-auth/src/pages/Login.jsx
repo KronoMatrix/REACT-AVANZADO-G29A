@@ -14,9 +14,14 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const { status } = await loginUserServices(data)
+      const response = await loginUserServices(data)
 
-      if (status === 200) {
+      if (response.status === 200) {
+        // Guardamos el token en el localstorage
+        // ésta información permanece aún si se cierra el navegador.
+        localStorage.setItem('token', response.data.token)
+
+        // console.log(response.data)
         navigate('/dashboard')
       }
     } catch (error) {
@@ -42,7 +47,13 @@ const Login = () => {
           <label htmlFor='floatingInput'>Email address</label>
         </div>
         <div className='form-floating'>
-          <input type='password' className='form-control' id='floatingPassword' placeholder='Password' />
+          <input
+            type='password'
+            className='form-control'
+            id='floatingPassword'
+            placeholder='Password'
+            {...register('password', { required: true })}
+          />
           <label htmlFor='floatingPassword'>Password</label>
         </div>
 

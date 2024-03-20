@@ -19,7 +19,7 @@ const Header = () => {
           <NavLink className={linkIsActive} to='/home'>Home</NavLink>
         </li>
         <li className='header__list-link'>
-          <NavLink className={linkIsActive} to='/dashboar'>Dashboard</NavLink>
+          <NavLink className={linkIsActive} to='/dashboard'>Dashboard</NavLink>
         </li>
         {isAuth
           ? (

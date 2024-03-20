@@ -10,21 +10,11 @@ const AuthContext = createContext()
 // El provider es un componente que envuelve a los componentes que necesitan acceder a la información del contexto. El provider maneja donde se obtiene la información y como se comparte.
 
 function AuthProvider ({ children }) {
-  const [list, setList] = useState([]) // Lista de canciones
-  const [loading, setLoading] = useState(true) // ¿Esta cargando?
-  const [selectedSong, setSelectedSong] = useState({}) // Canción seleccionada
-
-  // Simulo la llamada a la API
-  useEffect(() => {
-    setTimeout(() => {
-      setList(canciones)
-      setLoading(false)
-    }, 2000)
-  }, [])
-
+  // Aquí va mi lógica
+  
   return (
   // El provider recibe una prop llamada value, que es la información que queremos compartir.
-    <AuthContext.Provider value={{ list, loading, selectedSong, setSelectedSong }}>
+    <AuthContext.Provider value={{  }}>
       {children}
     </AuthContext.Provider>
   )

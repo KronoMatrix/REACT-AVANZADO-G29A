@@ -16,7 +16,7 @@ function AuthProvider ({ children }) {
   const [userPayload, setUserPayload] = useState(null) // Información del Payload del token
 
   const login = (token) => {
-    localStorage.setItem('token', token)
+    localStorage.setItem('token', token) // Guardo el token en el localStorage
     setIsAuth(true)
     const payload = jwtDecode(token)
     setUserPayload(payload)
